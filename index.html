@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El clima de mi ciudad</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="contenedor">
+
+        <header>
+            <p>EXPLORACIÓN DE DATOS</p>
+            <h1>El clima de mi ciudad</h1>
+            <p>Consulta las condiciones meteorológicas.</p>
+        </header>
+
+        <!-- Formulario para introducir el nombre de la ciudad -->
+        <form id="formulario">
+            <label for="ciudad">Nombre de la ciudad</label>
+            <input id="ciudad" type="text"
+                   placeholder="Ej. San Luis Potosí" required>
+            <button type="submit">Consultar clima</button>
+        </form>
+
+        <!-- Mensajes de carga y errores -->
+        <p id="estado" aria-live="polite"></p>
+
+        <!-- Aquí se mostrarán los datos obtenidos de la API -->
+        <section id="resultado" hidden>
+
+            <h2 id="ubicacion"></h2>
+
+            <div class="clima-principal">
+                <span id="icono"></span>
+                <div>
+                    <p id="temperatura"></p>
+                    <p id="descripcion"></p>
+                </div>
+            </div>
+
+            <div class="datos">
+                <article>
+                    <span>Humedad</span>
+                    <strong id="humedad"></strong>
+                </article>
+
+                <article>
+                    <span>Sensación térmica</span>
+                    <strong id="sensacion"></strong>
+                </article>
+
+                <article>
+                    <span>Viento</span>
+                    <strong id="viento"></strong>
+                </article>
+            </div>
+
+            <section class="pronostico" aria-labelledby="titulo-pronostico">
+                <h3 id="titulo-pronostico">Pronóstico para los próximos 3 días</h3>
+                <div id="dias-pronostico" class="pronostico-dias"></div>
+            </section>
+
+            <p id="actualizacion"></p>
+        </section>
+
+        <footer>
+            Datos meteorológicos:
+            <a href="https://open-meteo.com/"
+               target="_blank" rel="noopener">Open-Meteo</a>
+        </footer>
+
+    </main>
+
+</body>
+</html>
